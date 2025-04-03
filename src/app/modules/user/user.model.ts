@@ -45,6 +45,11 @@ const userSchema = new Schema<IUser, UserModel>(
         ref: 'Vehicle',
       },
     ],
+    defaultVehicle: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Vehicle',
+      default: null,
+    },
     documents: {
       driverLicense: String,
       insurance: String,
