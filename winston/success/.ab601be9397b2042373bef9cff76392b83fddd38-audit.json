@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\success\\.ab601be9397b2042373bef9cff76392b83fddd38-audit.json",
+    "files": [
+        {
+            "date": 1743668167315,
+            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\success\\03-04-2025-14-success.log",
+            "hash": "d7ab0935f4751c80007259dc78004f8695a10af641dca7a1145d41253d3b5763"
+        },
+        {
+            "date": 1743671756129,
+            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\success\\03-04-2025-15-success.log",
+            "hash": "b9a6275582928521747207b321759e23f16227808801d15e7d7af98b6a5b0f15"
+        },
+        {
+            "date": 1743674413675,
+            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\success\\03-04-2025-16-success.log",
+            "hash": "23b367a73d1e76f4b6ced0e4bfb958488ac4848c67eef3561971d5c933802056"
+        },
+        {
+            "date": 1743678055488,
+            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\success\\03-04-2025-17-success.log",
+            "hash": "dcdc27b0efdfa7a5f62b1749c5bd8bc783ecfed8dcf3a268dbbc7cde02707250"
+        },
+        {
+            "date": 1743681867528,
+            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\success\\03-04-2025-18-success.log",
+            "hash": "c82b151ecba451646b42fd70d0c01720fde6ecc66311822f317a3c1fb88dbc0c"
+        }
+    ],
+    "hashType": "sha256"
+}

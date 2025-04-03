@@ -8,12 +8,43 @@ import { IUser } from './user.interface';
 import { User } from './user.model';
 import AppError from '../../../errors/AppError';
 import generateOTP from '../../../utils/generateOTP';
+import { Vehicle } from '../vehicle/vehicle.model';
 // create user
-const createUserToDB = async (payload: IUser): Promise<IUser> => {
-  const createUser = await User.create(payload);
-  
+const createUserToDB = async (payload: IUser) => {
+  const { name, email, contactNumber, password, documents, vehicles } = payload;
 
-  return createUser;
+  const vehicle = new Vehicle(vehicles);
+  const saveVehicle = vehicle.save();
+
+  // Create user
+  const user = new User({
+    name,
+    email,
+    contactNumber,
+    password,
+    vehicles: [vehicle._id],
+    documents,
+  });
+
+  await Promise.all([saveVehicle, user.save()]);
+  //send email
+  const otp = generateOTP(4);
+  const values = {
+    name: user.name,
+    otp: otp,
+    email: user.email!,
+  };
+  const createAccountTemplate = emailTemplate.createAccount(values);
+  emailHelper.sendEmail(createAccountTemplate);
+
+  //save to DB
+  const authentication = {
+    oneTimeCode: otp,
+    expireAt: new Date(Date.now() + 3 * 60000),
+  };
+  await User.findOneAndUpdate({ _id: user._id }, { $set: { authentication } });
+
+  return user;
 };
 
 // create Businessman
@@ -106,7 +137,7 @@ const updateProfileToDB = async (
   }
 
   //unlink file here
-  if (payload.image) {
+  if (payload.image && isExistUser.image) {
     unlinkFile(isExistUser.image);
   }
 

@@ -5,9 +5,16 @@ export type IUser = {
   role: USER_ROLES;
   email: string;
   password: string;
+  contactNumber: string;
   image?: string;
   isDeleted: boolean;
   address: string;
+  vehicles: string[];
+  documents: {
+    driverLicense: string;
+    insurance: string;
+    permits: string;
+  };
   status: 'active' | 'blocked';
   verified: boolean;
   authentication?: {

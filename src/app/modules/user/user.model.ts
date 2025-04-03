@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { StatusCodes } from 'http-status-codes';
-import { model, Schema } from 'mongoose';
+import mongoose, { model, Schema } from 'mongoose';
 import config from '../../../config';
 import { USER_ROLES } from '../../../enums/user';
 import AppError from '../../../errors/AppError';
@@ -23,6 +23,7 @@ const userSchema = new Schema<IUser, UserModel>(
       unique: true,
       lowercase: true,
     },
+    contactNumber: { type: String, required: true },
     password: {
       type: String,
       required: true,
@@ -38,6 +39,17 @@ const userSchema = new Schema<IUser, UserModel>(
       enum: ['active', 'blocked'],
       default: 'active',
     },
+    vehicles: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Vehicle',
+      },
+    ],
+    documents: {
+      driverLicense: String,
+      insurance: String,
+      permits: String,
+    }, 
     verified: {
       type: Boolean,
       default: false,

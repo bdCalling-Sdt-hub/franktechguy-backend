@@ -1,4 +1,11 @@
 import { string, z } from 'zod';
+const vehicleSchema = z.object({
+  type: z.string().min(1, 'Vehicle type is required'),
+  model: z.string().min(1, 'Model is required'),
+  year: z.string().min(1, 'Year of manufacture is required'),
+  licensePlate: z.string().min(1, 'License plate is required'),
+  vin: z.string().min(1, 'VIN is required'),
+});
 
 export const createUserZodSchema = z.object({
   body: z.object({
@@ -14,27 +21,14 @@ export const createUserZodSchema = z.object({
       .min(8, 'Password must be at least 8 characters long'),
     phone: string().default('').optional(),
     profile: z.string().optional(),
-  }),
-});
-
-const createBusinessUserZodSchema = z.object({
-  body: z.object({
-    name: z.string({ required_error: 'Name is required' }),
-    phone: z.string({ required_error: 'Contact is required' }),
-    email: z
-      .string({ required_error: 'Email is required' })
-      .email('Invalid email address'),
-    password: z
-      .string({ required_error: 'Password is required' })
-      .min(8, 'Password must be at least 8 characters long'),
-    profile: z.string().optional(),
+    vehicles: vehicleSchema,
   }),
 });
 
 const updateUserZodSchema = z.object({
   body: z.object({
     name: z.string().optional(),
-    contact: z.string().optional(),
+    contactNumber: z.string().optional(),
     address: z.string().optional(),
     email: z.string().email('Invalid email address').optional(),
     password: z.string().optional(),
@@ -45,5 +39,4 @@ const updateUserZodSchema = z.object({
 export const UserValidation = {
   createUserZodSchema,
   updateUserZodSchema,
-  createBusinessUserZodSchema,
 };
