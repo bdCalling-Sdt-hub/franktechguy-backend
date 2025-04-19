@@ -1,6 +1,10 @@
 import { Model } from 'mongoose';
 import { USER_ROLES } from '../../../enums/user';
 import { IVehicle } from '../vehicle/vehicle.interface';
+export interface ILocation {
+  type: 'Point';
+  coordinates: [number, number]; // [ longitude, latitude ]
+}
 export type IUser = {
   name: string;
   role: USER_ROLES;
@@ -12,6 +16,7 @@ export type IUser = {
   address: string;
   vehicles: string[];
   defaultVehicle: IVehicle | null;
+  location: ILocation;
   documents: {
     driverLicense: string;
     insurance: string;

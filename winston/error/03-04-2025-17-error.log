@@ -1,7 +1,0 @@
-Thu Apr 03 2025 17:5:35 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/users/ 400 - 8.255 ms
-Thu Apr 03 2025 17:8:41 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/users/ 400 - 65.074 ms
-Thu Apr 03 2025 17:11:9 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/users/ 400 - 78.144 ms
-Thu Apr 03 2025 17:12:13 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/users/ 400 - 59.966 ms
-Thu Apr 03 2025 17:12:22 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/users/ 400 - 48.152 ms
-Thu Apr 03 2025 17:14:9 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/users/ 400 - 79.813 ms
-Thu Apr 03 2025 17:31:23 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/users/ 400 - 353.440 ms

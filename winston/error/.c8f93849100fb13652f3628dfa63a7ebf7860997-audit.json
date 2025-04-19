@@ -6,34 +6,9 @@
     "auditLog": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\.c8f93849100fb13652f3628dfa63a7ebf7860997-audit.json",
     "files": [
         {
-            "date": 1743668167318,
-            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\03-04-2025-14-error.log",
-            "hash": "40fd74463fa6d058b93b7efe8d41386ff150b7c35dc9ae43329eb8271e92c297"
-        },
-        {
-            "date": 1743671756133,
-            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\03-04-2025-15-error.log",
-            "hash": "a3ce3f544e7e6f1a0452ef378d8e024277524dc04069fb72e2e632f961cb8819"
-        },
-        {
-            "date": 1743674413679,
-            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\03-04-2025-16-error.log",
-            "hash": "c1f738a564ee6dcab7299112575c39045dcbdf0a2c6885a0cf9165ba3ceb9083"
-        },
-        {
-            "date": 1743678055492,
-            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\03-04-2025-17-error.log",
-            "hash": "92bca79e53a72a4b113d79ba8f8a714fc9e8f104709b440041adebe0f6bcc260"
-        },
-        {
-            "date": 1743681867532,
-            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\03-04-2025-18-error.log",
-            "hash": "0050e037c31d2bf0dfa506de37445d8d082c423717a1c888a84adcf6e3c8dd00"
-        },
-        {
-            "date": 1743685433983,
-            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\03-04-2025-19-error.log",
-            "hash": "994181d3ada6c5fda6521fc5ebd964c27e6b9a2cb86491bf43d82debc9c9d8db"
+            "date": 1745063307952,
+            "name": "C:\\Users\\Rakib\\OneDrive\\Desktop\\projects\\frank-backend\\winston\\error\\19-04-2025-17-error.log",
+            "hash": "b5755026f9a6a77006a398e8688475a71d750f466368ae3570c32547aceece1d"
         }
     ],
     "hashType": "sha256"

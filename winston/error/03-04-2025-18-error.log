@@ -1,8 +1,0 @@
-Thu Apr 03 2025 18:12:11 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/auth/verify-phone 404 - 7.345 ms
-Thu Apr 03 2025 18:12:28 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/auth/verify-phone 404 - 0.577 ms
-Thu Apr 03 2025 18:13:6 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/auth/verify-email 400 - 289.952 ms
-Thu Apr 03 2025 18:17:2 [SERVER-NAME] error: 10.0.60.126 - PATCH /api/v1/users/profile 401 - 1.553 ms
-Thu Apr 03 2025 18:19:2 [SERVER-NAME] error: 10.0.60.126 - PATCH /api/v1/users/profile 401 - 5.615 ms
-Thu Apr 03 2025 18:19:38 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/auth/login 400 - 503.896 ms
-Thu Apr 03 2025 18:19:54 [SERVER-NAME] error: 10.0.60.126 - POST /api/v1/auth/login 400 - 506.043 ms
-Thu Apr 03 2025 18:20:18 [SERVER-NAME] error: 10.0.60.126 - PATCH /api/v1/users/profile 400 - 594.155 ms

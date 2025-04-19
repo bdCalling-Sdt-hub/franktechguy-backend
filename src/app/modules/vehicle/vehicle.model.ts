@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-
+import mongoose from 'mongoose';
 const vehicleSchema = new mongoose.Schema({
   type: {
     type: String,
@@ -21,6 +20,10 @@ const vehicleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  image: {
+    type: String, // Assuming this is a URL or base64 string
+  },
   status: {
     type: String,
     enum: ['Available', 'In Use'],
@@ -29,4 +32,3 @@ const vehicleSchema = new mongoose.Schema({
 });
 
 export const Vehicle = mongoose.model('Vehicle', vehicleSchema);
-

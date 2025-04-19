@@ -4,20 +4,21 @@ import { User } from '../user/user.model';
 import { IVehicle } from './vehicle.interface';
 import { Vehicle } from './vehicle.model';
 
-
 const addVehicle = async (userId: string, vehicleData: IVehicle) => {
   const user = await User.findById(userId);
   if (!user) {
     throw new AppError(StatusCodes.NOT_FOUND, 'User not found');
   }
+
   // Create and save the vehicle
   const vehicle: any = new Vehicle(vehicleData);
   await vehicle.save();
-
   // Add vehicle ID to the user's vehicles array
-  user.vehicles.push(vehicle?._id);
-  await user.save();
-
+  await User.findByIdAndUpdate(
+    userId,
+    { $push: { vehicles: vehicle._id } },
+    { new: true },
+  );
   return vehicle;
 };
 
@@ -52,14 +53,12 @@ const deleteVehicle = async (userId: string, vehicleId: string) => {
   }
 
   // Remove the vehicle from user's vehicles array
-  user.vehicles = user.vehicles.filter(
-    (veh: any) => veh.toString() !== vehicleId,
-  );
-  await user.save();
+  await User.findByIdAndUpdate(userId, {
+    $pull: { vehicles: vehicleId },
+  });
 
   // Delete the vehicle from the database
   const result = await Vehicle.findByIdAndDelete(vehicleId);
-
   return result;
 };
 
@@ -75,11 +74,11 @@ const setDefaultVehicle = async (userId: string, vehicleId: string) => {
     throw new AppError(StatusCodes.NOT_FOUND, 'Vehicle not found');
   }
 
-  // Set the default vehicle
-  user.defaultVehicle = vehicleId;
-  vehicle.status = 'In Use';
-  await vehicle.save();
-  await user.save();
+  // Update vehicle status
+  await Vehicle.findByIdAndUpdate(vehicleId, { status: 'In Use' });
+
+  // Update default vehicle on user
+  await User.findByIdAndUpdate(userId, { defaultVehicle: vehicleId });
 
   return;
 };

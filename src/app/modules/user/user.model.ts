@@ -5,7 +5,31 @@ import config from '../../../config';
 import { USER_ROLES } from '../../../enums/user';
 import AppError from '../../../errors/AppError';
 import { IUser, UserModel } from './user.interface';
+const locationSchema = new mongoose.Schema({
+  type: { type: String, enum: ['Point'], default: 'Point' },
+  coordinates: {
+    type: [Number],
+    required: false,
+    validate: {
+      validator: function (coords: any) {
+        if (coords.length !== 2) return false;
 
+        const [longitude, latitude] = coords;
+        if (
+          longitude < -180 ||
+          longitude > 180 ||
+          latitude < -90 ||
+          latitude > 90
+        ) {
+          return false;
+        }
+        return true;
+      },
+      message:
+        'Invalid coordinates: longitude must be between -180 and 180, latitude must be between -90 and 90.',
+    },
+  },
+});
 const userSchema = new Schema<IUser, UserModel>(
   {
     name: {
@@ -39,6 +63,7 @@ const userSchema = new Schema<IUser, UserModel>(
       enum: ['active', 'blocked'],
       default: 'active',
     },
+    location: locationSchema,
     vehicles: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -54,7 +79,7 @@ const userSchema = new Schema<IUser, UserModel>(
       driverLicense: String,
       insurance: String,
       permits: String,
-    }, 
+    },
     verified: {
       type: Boolean,
       default: false,
